@@ -58,15 +58,18 @@ def main():
         valor_predicho = st.session_state.predicted_labels[0]
         st.text_input("Prediction", value=valor_predicho, disabled=True)
         
-        if st.button("Load Info ☁️"):
-            st.write('Info Loaded')
+    if st.button("Load Info ☁️"):
+        if st.session_state.predicted_labels:
+            st.write(f"Predicted Labels: {', '.join(st.session_state.predicted_labels)}")
+        else:
+            st.warning("No labels detected yet. Please run the detection first.")
             
     if st.button("🔄 Reiniciar Aplicación"):
         st.rerun()
-    
+        
     if st.button("🔙"):
         st.switch_page('./caraccident_app.py')
-    
+        
 
 
 
