@@ -42,9 +42,9 @@ if a == 'Home':
     image_but = st.button('Imagen')
     video_but = st.button('Video')
     if image_but:
-        st.switch_page('./pages/page_2_detection.py')
+        st.switch_page('app/pages/page_2_detection.py')
     if video_but:
-        st.switch_page('./pages/page_3_video.py')
+        st.switch_page('app/pages/page_3_video.py')
     
     
 if a == 'Model':
