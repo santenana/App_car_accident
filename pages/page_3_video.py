@@ -2,12 +2,10 @@ import streamlit as st
 import cv2
 import numpy as np
 from PIL import Image
-import os
 from collections import Counter
 from time import sleep
 from ultralytics import YOLO
 from tempfile import NamedTemporaryFile
-from io import BytesIO
 
 model_path = './best.pt'
 

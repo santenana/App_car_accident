@@ -3,7 +3,6 @@ import numpy as np
 import os
 from PIL import Image
 from ultralytics import YOLO
-import matplotlib.pyplot as plt
 
 model_path = './best.pt'
 
