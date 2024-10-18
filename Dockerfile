@@ -1,18 +1,24 @@
-FROM python:3.10
+FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y python3.10 python3-pip && \
+    apt-get install -y libgl1-mesa-glx libglib2.0-0 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-
 COPY requirements.txt .
 
-RUN apt-get update && \
-    apt-get install -y ffmpeg libsm6 libxext6 && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-    
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+
 COPY . .
 
-EXPOSE 6006
 
-CMD ["streamlit", "run", "caraccident_app.py", "--server.port=6006", "--server.address=0.0.0.0"]
+EXPOSE 8501
+
+CMD ["streamlit", "run", "caraccident_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
