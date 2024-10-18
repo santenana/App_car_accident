@@ -1,0 +1,10 @@
+[client]
+showSidebarNavigation = false 
+toolbarMode = "auto"
+
+[theme]
+primaryColor="#a9d6e5"
+backgroundColor="#F2F2F2"
+secondaryBackgroundColor="#8D99AE"
+textColor="#002f6c"
+base="light"
