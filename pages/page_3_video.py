@@ -77,7 +77,7 @@ def main():
         st.rerun()
         
     if st.button("🔙"):
-        st.switch_page('/home/santenana/Proyectos/02_ObjectDetection/Front/front.py')
+        st.switch_page('./front.py')
     
 if __name__ == "__main__":
     main()

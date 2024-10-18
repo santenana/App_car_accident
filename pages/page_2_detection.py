@@ -6,7 +6,7 @@ import cv2
 from ultralytics import YOLO
 import matplotlib.pyplot as plt
 
-model_path = '/home/santenana/Proyectos/02_ObjectDetection/Front/best.pt'
+model_path = './best.pt'
 
 st.markdown("# Detection Image")
 
@@ -67,7 +67,7 @@ def main():
         st.rerun()
     
     if st.button("🔙"):
-        st.switch_page('/home/santenana/Proyectos/02_ObjectDetection/Front/front.py')
+        st.switch_page('./front.py')
     
 
 
