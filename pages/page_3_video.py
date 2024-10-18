@@ -77,7 +77,7 @@ def main():
         st.rerun()
         
     if st.button("🔙"):
-        st.switch_page('./front.py')
+        st.switch_page('./caraccident_app.py')
     
 if __name__ == "__main__":
     main()
