@@ -9,7 +9,7 @@ from ultralytics import YOLO
 from tempfile import NamedTemporaryFile
 from io import BytesIO
 
-model_path = 'app/best.pt'
+model_path = './best.pt'
 
 st.markdown("# Detection Video")
 
@@ -77,7 +77,7 @@ def main():
         st.rerun()
         
     if st.button("🔙"):
-        st.switch_page('app/caraccident_app.py')
+        st.switch_page('./caraccident_app.py')
     
 if __name__ == "__main__":
     main()
