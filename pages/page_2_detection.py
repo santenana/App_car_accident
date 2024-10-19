@@ -120,6 +120,7 @@ def main():
         
     if st.button("🔙"):
         st.switch_page('./caraccident_app.py')
+        st.rerun()
     
     
         
