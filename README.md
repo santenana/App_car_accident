@@ -1,11 +1,10 @@
 ﻿﻿
   
 
-## Car Accident Detection (under construction 🏗️)
+## Car Accident Detection
 
 In this mini-project, tools such as YOLO, Torch, Roboflow (from Ultralytics), and the CUDA API will be used to train a neural network for object detection, specifically for detecting types of vehicle accidents. The final product consists of a small app that allows identifying the type of accident through a video or image to automate the process of determining how much money the insurance company should compensate the affected parties.
 
-  
   
 
 ## RoboFlow, YOLO and CUDA <image src="https://cdn.icon-icons.com/icons2/2699/PNG/512/nvidia_logo_icon_169902.png"  width="25">
@@ -22,7 +21,6 @@ This results in a file format that YOLO can quickly process for a large set of i
 
 ## Model 👁️
 
-  
 
 For the model, a function is created that takes the following arguments: the path to the `data.yaml` file, the number of epochs, the image size, and the batch size. The model used is `yolo11n.pt`, a pre-trained model from Ultralytics for object detection. In the end, the function will return the best model in this way:
 
@@ -41,7 +39,6 @@ return best_model
 
 ## Video detection 📽️
 
-  
 
 For our app, a video detector is required, so a function is created that takes two parameters: the path to the video to be evaluated and the path to the best-performing model. This function will create a window in streamlit which show the predicted label with a bounding box, that displays the video along with its respective bounding box and the label of the type of accident shown in the video. For this section, the OpenCV tool is used.
 
@@ -106,7 +103,8 @@ An app is created in Streamlit, which will support the previous functions and us
 
 ## How to Use it
 
-For now, the application is in beta and only works by downloading the repository and installing a container in Docker. Later, it will be moved to a web or mobile application for greater user convenience.
+There are two ways to use this app in cloud using the link https://carappaccident.streamlit.app/ (⚠️ in cloud the video can show some 
+delays due) or by running locally by downloading the repository and installing a container in Docker. Later, it will be moved to a web or mobile application for greater user convenience.
 
 To use it, step 0 is to have Docker installed on your computer, then you should follow these instructions.
 
