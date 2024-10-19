@@ -3,6 +3,8 @@ import numpy as np
 import os
 from PIL import Image
 from ultralytics import YOLO
+from fpdf import FPDF
+from caraccident_app import placa_id 
 
 model_path = './best.pt'
 
@@ -32,6 +34,30 @@ def imagen_detect(path):
             label = labels[label_index]
             predicted_labels.append(label)
     return (imagen,predicted_labels)
+
+def generate_pdfdef(placa, label,imagen_det):
+    pdf = FPDF()
+    pdf.add_page()
+
+    pdf.set_font("Arial", "B", 16)
+    pdf.cell(200, 10, txt="Reporte diagnóstico de lesiones óseas", ln=True, align="C")
+
+    pdf.ln(10)
+    pdf.set_font("Arial", size=12)
+    pdf.cell(200, 10, txt=f"ID del paciente: {placa}", ln=True)
+
+    pdf.ln(10)
+    pdf.cell(200, 10, txt=f"Zona afectada: {label}", ln=True)
+    pdf.ln(10)
+    try:
+        pdf.image(imagen_det, x=10, y=50, w=100) 
+    except RuntimeError:
+        print("Error al cargar la imagen")
+    pdf_output = f"reporte_{placa}.pdf"
+    pdf.output(pdf_output)
+    print(f"PDF generado con éxito: {pdf_output}")
+
+
 
 def main():
     if 'image_array' not in st.session_state:
@@ -63,12 +89,21 @@ def main():
             st.write(f"Predicted Labels: {', '.join(st.session_state.predicted_labels)}")
         else:
             st.warning("No labels detected yet. Please run the detection first.")
+
+    if st.button("Generate Report 📑"):
+        placa = placa_id
+        label = valor_predicho
+        imagen_det = st.session_state.imagen
+        generate_pdf(placa, label,imagen_det)
+        
             
     if st.button("🔄 Reiniciar Aplicación"):
         st.rerun()
         
     if st.button("🔙"):
         st.switch_page('./caraccident_app.py')
+    
+    
         
 
 
