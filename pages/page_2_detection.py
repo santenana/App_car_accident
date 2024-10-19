@@ -35,7 +35,7 @@ def imagen_detect(path):
             predicted_labels.append(label)
     return (imagen,predicted_labels)
 
-def generate_pdfdef(placa, label,imagen_det):
+def generate_pdf(placa, label,imagen_det):
     pdf = FPDF()
     pdf.add_page()
 
