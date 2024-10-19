@@ -5,6 +5,11 @@ import utilidades as util
 import re
 
 a = util.menu()
+
+def obtener_placa():
+    placa_id = st.text_input("Write license plate:", "", key="texto", help="License Plate in capital letters and no spaces")
+    return placa_id
+
 if a == 'Home':
     st.markdown("# Welcome")
     st.markdown(
@@ -27,25 +32,37 @@ if a == 'Home':
             """,
             unsafe_allow_html=True)
 
-    placa_id = st.text_input("Write license plate:", "", key="texto", help="Linces Plate in capital letters and no Sapces")
+     
+    placa_id = obtener_placa()
+    # st.session_state.placa_id = placa_id
 
     def validar_texto(texto):
         patron = r'^[A-Z]{3}[0-9][0-9][0-9]'
         return re.match(patron, texto) is not None
-
+    
+    if 'placa_id' not in st.session_state:
+        st.session_state.cambio = None
+        
     if st.button("Enviar"):
         if validar_texto(placa_id):
             st.success("Your Linces Plate is: " + placa_id)
+            st.session_state.ID = True
+
         else:
             st.error("Invalid Format. Make sure the linces plate contains all 3 letters in capital and 3 numbers")
+    
+    
+    # st.markdown("---")
+    if 'ID' in st.session_state and st.session_state.get('ID', False):
+        image_but = st.button('Imagen')
+        video_but = st.button('Video')
+        if image_but:
+            st.session_state.placa_id = placa_id
+            st.switch_page('./pages/page_2_detection.py')
+        elif video_but:
+            st.session_state.placa_id = placa_id
+            st.switch_page('./pages/page_3_video.py')
 
-    st.markdown("---")
-    image_but = st.button('Imagen')
-    video_but = st.button('Video')
-    if image_but:
-        st.switch_page('./pages/page_2_detection.py')
-    if video_but:
-        st.switch_page('./pages/page_3_video.py')
     
     
 if a == 'Model':
