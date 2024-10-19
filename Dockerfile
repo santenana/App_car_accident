@@ -17,6 +17,7 @@ RUN pip install torch torchvision torchaudio --extra-index-url https://download.
 RUN pip install 'git+https://github.com/facebookresearch/detectron2.git'
 RUN pip install opencv-python
 RUN pip install ultralytics
+RUN pip install fpdf
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
