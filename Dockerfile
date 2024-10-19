@@ -15,6 +15,7 @@ WORKDIR /app
 
 RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
 RUN pip install 'git+https://github.com/facebookresearch/detectron2.git'
+RUN pip install opencv-python
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
