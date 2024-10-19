@@ -1,4 +1,4 @@
-﻿
+﻿﻿
   
 
 ## Car Accident Detection (under construction 🏗️)
@@ -117,6 +117,6 @@ cd .\App_car_accident\
 docker build -t caraccident_app .
 docker run -p 8501:8501 caraccident_app
 ```
-Then, in your browser, go to http://localhost:8501/ in your local browser to view the application.
+Then, in your browser, go to http://localhost:8501/ in your local browser to view the application and there you go, your own crash Detection.
 
-<img src="https://tenor.com/nxpLbzXfGNc.gif" alt="GIF de Tenor" />
+![reisa-uzawa-reisa](https://github.com/user-attachments/assets/006ee6d2-95cc-499a-8c01-d09dbb45f40c)
