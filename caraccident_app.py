@@ -65,11 +65,15 @@ if a == 'Model':
             the most recent image detection model created by Ultralytics. 
             This model family (YOLO) uses a backbone and neck architecture to improve feature 
             extraction, making it highly precise for object detection, segmentation, and classification.
+        </p>
 
+        <p class="custom-text">
             This model provides excellent accuracy with few parameters, and its image 
             processing speed makes it an ideal choice for tasks like crash detection, 
             where video footage may only capture a few seconds of an accident.
+            
         </p>
+        
         <img src="https://github.com/user-attachments/assets/a311a4ed-bbf2-43b5-8012-5f183a28a845" alt="Model image" style="width:100%; height:auto;">
         """,
         unsafe_allow_html=True)
