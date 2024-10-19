@@ -37,7 +37,7 @@ def Video(video_path, best_model):
         annotated_frame = res[0].plot()
         annotated_frame_rgb = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB)
         frame_placeholder.image(annotated_frame_rgb, channels="RGB")
-        sleep(1/60)  
+        sleep(1/30)  
     video.release()  
     cv2.destroyAllWindows()  
     f_label = [item for sublist in all_predicted_labels for item in sublist]
