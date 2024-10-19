@@ -114,6 +114,9 @@ if a == 'Home':
                 
             if st.button("🔙"):
                 st.switch_page('./caraccident_app.py')
+        if __name__ == "__main__":
+            main()
+                
     if video_but:
         st.markdown("# Detection Video")
         try:
