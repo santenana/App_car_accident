@@ -79,10 +79,7 @@ if a == 'Model':
         """,
         unsafe_allow_html=True)
     
-    
-    
-    
-    
+        
 if a == 'About Us':
     st.markdown("# About SGS Insurance")
 

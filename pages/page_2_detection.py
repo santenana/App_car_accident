@@ -92,7 +92,7 @@ def main():
 
     if st.button("Generate Report 📑"):
         placa = placa_id
-        label = valor_predicho
+        label = st.session_state.predicted_labels[0]
         imagen_det = st.session_state.imagen
         generate_pdf(placa, label,imagen_det)
         
