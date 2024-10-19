@@ -117,11 +117,12 @@ def main():
      
     # if st.button("🔄 Reiniciar Aplicación"):
     #     st.rerun()
-        
-    if st.button("🔙"):
-        st.switch_page('./caraccident_app.py')
-        st.session_state.ID = None
-        st.rerun()
+    st.session_state.ID = True
+    if 'ID' in st.session_state and st.session_state.get('ID', False):
+        if st.button("🔙"):
+            st.switch_page('./caraccident_app.py')
+            st.session_state.ID = None
+            st.rerun()
     
     
         
