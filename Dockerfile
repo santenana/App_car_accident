@@ -4,7 +4,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y python3.10 python3.10-dev python3-pip git libgl1-mesa-glx libglib2.0-0 && \
-    python -m pip install -e detectron2\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -15,6 +14,7 @@ RUN pip install --upgrade pip
 WORKDIR /app
 
 RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
+RUN pip install 'git+https://github.com/facebookresearch/detectron2.git'
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
