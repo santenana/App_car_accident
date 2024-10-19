@@ -6,3 +6,4 @@ pillow==10.2.0
 ultralytics==8.3.5
 ultralytics-thop==2.0.9
 torch==1.13.0
+fpdf==1.7.2
