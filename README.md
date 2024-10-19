@@ -111,9 +111,12 @@ For now, the application is in beta and only works by downloading the repository
 To use it, step 0 is to have Docker installed on your computer, then you should follow these instructions.
 
 ```
-git clone https://github.com/santenana/App_car_accident.git
+
+git clone https://github.com/santenana/App
 cd .\App_car_accident\
 docker build -t caraccident_app .
 docker run -p 8501:8501 caraccident_app
 ```
 Then, in your browser, go to http://localhost:8501/ in your local browser to view the application.
+
+<img src="https://tenor.com/nxpLbzXfGNc.gif" alt="GIF de Tenor" />
